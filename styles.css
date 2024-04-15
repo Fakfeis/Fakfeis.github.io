@@ -1,0 +1,360 @@
+body {
+    padding-top: 56px; /* Ensure content is not hidden behind the fixed navbar */
+}
+
+.navbar.bg-black {
+    background-color: #000 !important; /* Ensures the navbar is black */
+}
+
+body, html {
+    margin: 0;
+    padding: 0; /* Removes default margin and padding */
+}
+
+.navbar.bg-black {
+    background-color: #000 !important; /* Ensures the navbar is black */
+}
+/* Ensure the navbar has enough height for two rows of content */
+.navbar {
+    min-height: 100px; /* Adjust based on actual content size */
+}
+
+/* Positioning for the second logo to stay at the top right corner */
+.navbar-top-right-image {
+    position: absolute;
+    top: 10px; /* Adjust this to control vertical spacing from the top */
+    right: 15px; /* Adjust this to control spacing from the right */
+}
+
+/* Custom adjustments for navigation links to align them properly */
+.navbar-nav {
+    margin-bottom: 0; /* Remove bottom margin to align links closer to the navbar bottom */
+}
+
+/* Adjust the navbar-brand if needed to ensure alignment */
+.navbar-brand {
+    padding-bottom: 0; /* Minimize padding to align closer to the navbar bottom */
+}
+
+.navbar-top-right-image::before {
+    content: '';
+    position: absolute;
+    left: calc(-100vw + 700px); /* Experiment with this value */
+    top: 115%;
+    width: calc(80vw); /* Adjust based on the desired span */
+    height: 5px;
+    background-color: rgb(49, 54, 110);
+    transform: translateY(-50%);
+}
+/* Hide the top part of the navbar when .scrolled-down is applied */
+.navbar.scrolled-down .navbar-top-right-image {
+    display: none;
+}
+/* Adjust navbar height and elements alignment when scrolled down */
+.navbar.scrolled-down {
+    height: 60px; /* Example: smaller height when scrolled down */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar.scrolled-down .navbar-brand img,
+.navbar.scrolled-down .navbar-nav .nav-link {
+    height: 20px; /* Adjust the size of the logo and links if needed */
+    line-height: 50px; /* Align text vertically */
+}
+
+.overlapping-logo {
+    position: relative; /* Positioned relative to ensure it's part of the normal document flow */
+    top: -30px; /* Adjust this value to control the overlap */
+    z-index: 4; /* Higher z-index to scroll over the banner */
+}
+
+.header-background {
+    height: 70vh; /* Adjust the height as needed */
+    width: 100%; /* Ensure it spans the full width of the viewport */
+    background-image: url('Banner.png'); /* Path to your image */
+    background-size: cover; /* Cover the entire area of the div without stretching */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed;
+    position: relative; /* Position relative to its normal position */
+    top: 80px; /* Adjust this value based on the height of your navbar */
+    z-index: 0; /* Ensure it's under the navbar if overlapping occurs */
+}
+
+.pagebg {
+    background-image: url(background.png);
+    background-size: cover;
+    height: 100%;
+}
+
+.content-area {
+    position: relative;
+    z-index: 3; /* Ensures content scrolls over the banner */
+    padding: 20px;
+    background-size: cover;
+    display: flex; /* Use Flexbox for layout */
+    justify-content: center; /* Center the flex container */
+    align-items: center; /* Align items vertically */
+    margin-top: 200px;
+}
+
+.text-and-images {
+    display: flex; /* Enable Flexbox */
+    justify-content: space-between; /* Space between text and images */
+    align-items: flex-start; /* Align items at their start */
+    width: 80%; /* Adjust width as needed */
+}
+
+.text-content {
+    width: 60%; /* Allocate width to text content, adjust as needed */
+    /* Adjust text alignment and padding as needed */
+    text-align: center; /* Align text to the left */
+}
+
+.image-content {
+    width: 40%; /* Allocate width to image content, adjust as needed */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack images vertically */
+    justify-content: flex-start; /* Align images at the start */
+    align-items: center; /* Center images horizontally */
+    gap: 10px; /* Space between images */
+}
+
+.image-content img {
+    width: 90%; /* Make images take up the full width of their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+h1, h4, p, a{
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.headline {
+    color: #b30000;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+}
+
+.Info-area {
+    text-align: center; /* Center the text */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Align children to the center */
+    justify-content: center; /* Center children vertically in the container */
+    margin-top: 20px; /* Adjust as needed to space it from the logo */
+}
+
+.info-details {
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Adjust the space between each h4 element */
+    flex-wrap: wrap; /* Allows items to wrap in small screens */
+}
+
+h4 {
+    margin: 0; /* Removes default margins from h4 elements for cleaner alignment */
+}
+
+.download-img {
+    width: 300px; /* Adjust based on the desired size of your image */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Change the cursor to indicate it's clickable */
+}
+
+.download-link {
+    display: block; /* Needed to size the <a> element */
+    width: 300px; /* Width of the image */
+    height: 45px; /* Height of the image */
+    background-image: url('ButtonNormal.png'); /* Initial image */
+    background-size: cover; /* Cover the area of the <a> tag */
+    background-position: center; /* Center the background image */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    position: absolute;
+    right: 0px; /* Adjust as needed */
+    bottom: 0px; /* Adjust as needed */
+    z-index: 10; /* Ensure it's above other content */
+    font-size: 25px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .download-link {
+        display: flex; /* Re-enable flexbox for alignment */
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+        width: 100px; /* Smaller width */
+        height: 35px; /* Smaller height */
+        font-size: 10px; /* Smaller font size */
+        right: 10px; /* Adjust positioning if necessary */
+        bottom: 10px; /* Adjust positioning if necessary */
+        text-align: center; /* Ensures text alignment for non-flexbox fallback */
+        padding: 0; /* Adjust padding as needed for centering */
+    }
+}
+
+.download-link:hover {
+    background-image: url('ButtonHighlight.png'); /* Image on hover */
+}
+
+.nav-link {
+    font-size: 25px;
+}
+
+.page-footer {
+    width: 100%;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+    padding: 10px 0; /* Adjust padding as needed */
+}
+
+.racers-header-background {
+    height: 50vh;
+    width: 100%; /* Ensure it spans the full width of the viewport */
+    background-image: url('PilotBanner.png'); /* Path to your image */
+    background-size: cover; /* Cover the entire area of the div without stretching */
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image */
+    background-attachment: fixed;
+    position: relative; /* Position relative to its normal position */
+    top: 80px; /* Adjust this value based on the height of your navbar */
+    z-index: 0; /* Ensure it's under the navbar if overlapping occurs */
+}
+
+.Pilot-profiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Maintains the 3x3 grid */
+    gap: 1px; /* Adjust if you want space between grid items */
+    justify-content: center; /* Centers grid items horizontally in the grid container */
+    width: 60%; /* Adjust this value to make the grid smaller and centered */
+    margin: auto; /* Centers the .Pilot-profiles div within its parent */
+    grid-auto-rows: 130px; /* Adjust the row height as needed */
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.pilot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center; /* Or 'top', 'bottom', 'left', 'right', depending on the image */
+    background-repeat: no-repeat;
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+.pilot-text {
+    position: absolute;
+    width: 100%;
+    left: 10px;
+    padding: 5px 0;
+}
+
+.Pilot-header-background {
+    height: 50vh; /* Adjust the height as needed */
+    width: 100%; /* Ensure it spans the full width of the viewport */
+    background-image: url('RoadstarBanner.png'); /* Path to your image */
+    background-size: cover; /* Cover the entire area of the div without stretching */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed;
+    position: relative; /* Position relative to its normal position */
+    top: 80px; /* Adjust this value based on the height of your navbar */
+    z-index: 0; /* Ensure it's under the navbar if overlapping occurs */
+}
+
+#location1 {
+    background-image: url('EarthButtonNotActive.png');
+
+}
+#location1:hover {
+    background-image: url('EarthButton.png');
+}
+
+#location2 {
+    background-image: url('MarsButtonNotActive.png');
+}
+#location2:hover {
+    background-image: url('MarsButton.png');
+}
+
+#location3 {
+    background-image: url('MoonButtonNotActive.png');
+}
+#location3:hover {
+    background-image: url('MoonButton.png');
+}
+
+#pilot1, #pilot1:hover {
+    background-image: url('RoadstarProfileNotActive.png');
+}
+#pilot1:hover {
+    background-image: url('RoadstarProfile.png');
+}
+
+.profilepagebg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('Profilebg.png');
+    background-size: cover;
+}
+
+.Pilot-Info {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Adjust if you're centering the image */
+    align-items: flex-start; /* Aligns items to the start, which may help with positioning */
+    width: 100%; /* Ensures the container spans the width of its parent */
+    margin-top: 100px; /* Adds space above the container */
+}
+
+.pilot-image {
+    width: 50%; /* Or specify a fixed width */
+    object-fit: contain;
+    /* Remove margin-top from here and apply it to .Pilot-Info if needed */
+}
+
+.image-text {
+    margin-top: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(500%); /* Adjusts text to the left; may need tuning */
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    z-index: 2; /* Ensures it's above the image */
+}
+
+.racer-page {
+    height: 100%;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background: url('Profilebg.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Adjust height as needed */
+}
+
+.centered-img {
+    position: absolute;
+    margin-top: 150px;
+    max-width: 100%;
+    height: 90%;
+    z-index: -1; /* Ensures the image stays behind the text */
+}
+
