@@ -46,10 +46,17 @@ body, html {
     background-color: rgb(49, 54, 110);
     transform: translateY(-50%);
 }
-/* Hide the top part of the navbar when .scrolled-down is applied */
-.navbar.scrolled-down .navbar-top-right-image {
-    display: none;
+
+@media (max-width: 768px) {
+    .navbar-top-right-image {
+        display: none;
+    }
 }
+
+/* Hide the top part of the navbar when .scrolled-down is applied */
+/* .navbar.scrolled-down .navbar-top-right-image {
+    display: none;
+} */
 /* Adjust navbar height and elements alignment when scrolled down */
 .navbar.scrolled-down {
     height: 60px; /* Example: smaller height when scrolled down */
@@ -57,16 +64,26 @@ body, html {
     padding-bottom: 0;
 }
 
-.navbar.scrolled-down .navbar-brand img,
+/* .navbar.scrolled-down .navbar-brand img,
 .navbar.scrolled-down .navbar-nav .nav-link {
-    height: 20px; /* Adjust the size of the logo and links if needed */
-    line-height: 50px; /* Align text vertically */
-}
+    height: 20px;
+    line-height: 50px; 
+} */
 
 .overlapping-logo {
     position: relative; /* Positioned relative to ensure it's part of the normal document flow */
     top: -30px; /* Adjust this value to control the overlap */
     z-index: 4; /* Higher z-index to scroll over the banner */
+}
+
+.LogoImg {
+    height: 200px;
+}
+
+@media (max-width: 768px) {
+    .LogoImg {
+        width: 350px;
+    }
 }
 
 .header-background {
@@ -96,6 +113,46 @@ body, html {
     justify-content: center; /* Center the flex container */
     align-items: center; /* Align items vertically */
     margin-top: 200px;
+    background-image: url(Screenbg.png);
+}
+
+.content-area2 {
+    position: relative;
+    z-index: 3; /* Ensures content scrolls over the banner */
+    padding: 20px;
+    background-size: cover;
+    display: flex; /* Use Flexbox for layout */
+    justify-content: center; /* Center the flex container */
+    align-items: center; /* Align items vertically */
+    margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    .content-area {
+    position: relative;
+    z-index: 3; /* Ensures content scrolls over the banner */
+    padding: 20px;
+    background-size: cover;
+    display: flex; /* Use Flexbox for layout */
+    justify-content: center; /* Center the flex container */
+    align-items: center; /* Align items vertically */
+    margin-top: 200px;
+    background-image: url(Screenbg2.png);
+    
+    }
+}
+
+@media (max-width: 768px) {
+    .text-content {
+        margin-left: 100px;
+        width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .promoimg {
+        display: none;
+    }
 }
 
 .text-and-images {
@@ -199,6 +256,35 @@ h4 {
 
 .nav-link {
     font-size: 25px;
+}
+
+@media (max-width: 786px) {
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 20px;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+.image-link {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .image-link {
+        margin-right: 50px;
+        top: 150px;
+    }
 }
 
 .page-footer {
